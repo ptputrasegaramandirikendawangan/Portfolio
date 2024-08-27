@@ -1,0 +1,45 @@
+<html>
+<head>
+<title>app.js</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<style type="text/css">
+.s0 { color: #a9b7c6;}
+.s1 { color: #6a8759;}
+.s2 { color: #cc7832;}
+.s3 { color: #6897bb;}
+</style>
+</head>
+<body bgcolor="#2b2b2b">
+<table CELLSPACING=0 CELLPADDING=5 COLS=1 WIDTH="100%" BGCOLOR="#606060" >
+<tr><td><center>
+<font face="Arial, Helvetica" color="#000000">
+app.js</font>
+</center></td></tr></table>
+<pre><span class="s0">const hamburger = document.querySelector(</span><span class="s1">'.header .nav-bar .nav-list .hamburger'</span><span class="s0">);</span>
+<span class="s0">const mobile_menu = document.querySelector(</span><span class="s1">'.header .nav-bar .nav-list ul'</span><span class="s0">);</span>
+<span class="s0">const menu_item = document.querySelectorAll(</span><span class="s1">'.header .nav-bar .nav-list ul li a'</span><span class="s0">);</span>
+<span class="s0">const header = document.querySelector(</span><span class="s1">'.header.container'</span><span class="s0">);</span>
+
+<span class="s0">hamburger.addEventListener(</span><span class="s1">'click'</span><span class="s0">, () =&gt; {</span>
+	<span class="s0">hamburger.classList.toggle(</span><span class="s1">'active'</span><span class="s0">);</span>
+	<span class="s0">mobile_menu.classList.toggle(</span><span class="s1">'active'</span><span class="s0">);</span>
+<span class="s0">});</span>
+
+<span class="s0">document.addEventListener(</span><span class="s1">'scroll'</span><span class="s0">, () =&gt; {</span>
+	<span class="s2">var </span><span class="s0">scroll_position = window.scrollY;</span>
+	<span class="s2">if </span><span class="s0">(scroll_position &gt; </span><span class="s3">250</span><span class="s0">) {</span>
+		<span class="s0">header.style.backgroundColor = </span><span class="s1">'white'</span><span class="s0">;</span>
+	<span class="s0">} </span><span class="s2">else </span><span class="s0">{</span>
+		<span class="s0">header.style.backgroundColor = </span><span class="s1">'transparent'</span><span class="s0">;</span>
+	<span class="s0">}</span>
+<span class="s0">});</span>
+
+<span class="s0">menu_item.forEach((item) =&gt; {</span>
+	<span class="s0">item.addEventListener(</span><span class="s1">'click'</span><span class="s0">, () =&gt; {</span>
+		<span class="s0">hamburger.classList.toggle(</span><span class="s1">'active'</span><span class="s0">);</span>
+		<span class="s0">mobile_menu.classList.toggle(</span><span class="s1">'active'</span><span class="s0">);</span>
+	<span class="s0">});</span>
+<span class="s0">});</span>
+</pre>
+</body>
+</html>
